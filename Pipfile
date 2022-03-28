@@ -12,8 +12,10 @@ pytz = "==2022.1"
 sqlparse = "==0.4.2"
 tzdata = "==2022.1"
 Django = "==4.0.3"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
+isort = "*"
 
 [requires]
 python_version = "3.9"
