@@ -5,7 +5,6 @@ from .models import CarModel
 from .serializers import CarSerializer
 
 
-# class CarListCreateView(ListCreateAPIView):
 class CarListCreateView(ListAPIView):
     permission_classes = (IsAuthenticatedOrReadOnly,)
     serializer_class = CarSerializer
@@ -31,5 +30,3 @@ class CarGetById(RetrieveAPIView):
 class CarDelete(DestroyAPIView):
     queryset = CarModel.objects.all()
     serializer_class = CarSerializer
-
-

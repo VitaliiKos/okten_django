@@ -41,4 +41,4 @@ class AddAvatarView(UpdateAPIView):
     serializer_class = AddAvatarSerializer
 
     def get_object(self):
-        return  self.request.user.profile
+        return self.request.user.profile

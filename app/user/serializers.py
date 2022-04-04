@@ -3,6 +3,9 @@ from django.db import transaction
 
 from rest_framework.serializers import ModelSerializer
 
+from utils.email_utils import EmailUtils
+from utils.jwt_util import JwtUtils
+
 from .models import UserModel as User
 
 from app.profile.models import ProfileModel
@@ -36,4 +39,6 @@ class UserSerializer(ModelSerializer):
         profile = validated_data.pop('profile')
         user = UserModel.objects.create_user(**validated_data)
         ProfileModel.objects.create(**profile, user=user)
+        token = JwtUtils.create_token(user)
+        EmailUtils.register_email(user.email, user.profile.name, token)
         return user
