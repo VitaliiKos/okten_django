@@ -12,6 +12,7 @@ class ActivateUserView(GenericAPIView):
     def get(self, *args, **kwargs):
         token = kwargs.get('token')
         user = JwtUtils.validate_token(token)
+        print(user)
         user.is_active = True
         user.save()
         return Response(status=status.HTTP_200_OK)
