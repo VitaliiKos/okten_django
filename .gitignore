@@ -1,2 +1,6 @@
 .idea
 venv
+.env
+Pipfile.lock
+storage
+__pycache__

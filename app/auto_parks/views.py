@@ -1,5 +1,6 @@
 from rest_framework.generics import CreateAPIView, DestroyAPIView, ListCreateAPIView, RetrieveAPIView
 
+from ..user.permissions import CanActivateUser
 from .models import AutoParkModel
 from .serializers import AutoParkSerializer
 
@@ -26,5 +27,6 @@ class AutoParkGetById(RetrieveAPIView):
 
 
 class AutoParkDelete(DestroyAPIView):
+    permission_classes = (CanActivateUser,)
     serializer_class = AutoParkSerializer
     queryset = AutoParkModel.objects.all()
