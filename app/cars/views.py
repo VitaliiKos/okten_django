@@ -14,9 +14,6 @@ class CarListCreateView(ListAPIView):
         auto_park_id = self.request.query_params.get('autoParkId', None)
         if auto_park_id:
             queryset = queryset.filter(auto_park_id__exact=auto_park_id)
-            print('*'*50)
-            print('queryset', queryset)
-            print('*'*50)
         return queryset
 
 
