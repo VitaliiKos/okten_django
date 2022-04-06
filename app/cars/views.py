@@ -5,7 +5,6 @@ from .models import CarModel
 from .serializers import CarSerializer
 
 
-# class CarListCreateView(ListCreateAPIView):
 class CarListCreateView(ListAPIView):
     permission_classes = (IsAuthenticatedOrReadOnly,)
     serializer_class = CarSerializer
@@ -15,6 +14,9 @@ class CarListCreateView(ListAPIView):
         auto_park_id = self.request.query_params.get('autoParkId', None)
         if auto_park_id:
             queryset = queryset.filter(auto_park_id__exact=auto_park_id)
+            print('*'*50)
+            print('queryset', queryset)
+            print('*'*50)
         return queryset
 
 
@@ -31,5 +33,3 @@ class CarGetById(RetrieveAPIView):
 class CarDelete(DestroyAPIView):
     queryset = CarModel.objects.all()
     serializer_class = CarSerializer
-
-
