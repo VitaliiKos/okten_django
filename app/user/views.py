@@ -1,17 +1,16 @@
-from django.contrib.auth import get_user, get_user_model
+from django.contrib.auth import get_user_model
 
 from rest_framework import status
-from rest_framework.generics import GenericAPIView, ListCreateAPIView, UpdateAPIView
-from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.generics import GenericAPIView, ListCreateAPIView, RetrieveUpdateAPIView, UpdateAPIView
+from rest_framework.permissions import AllowAny, IsAdminUser
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from utils.jwt_util import JwtUtils
-
-from .permissions import IsSuperUser
+from ..profile.models import ProfileModel
+from .permissions import CanActivateUser, IsSuperUser
 from .serializers import UserSerializer
 
-from app.profile.serializers import AddAvatarSerializer
+from app.profile.serializers import AddAvatarSerializer, ProfileSerializer
 
 UserModel = get_user_model()
 
@@ -44,15 +43,18 @@ class UserToAdminView(GenericAPIView):
     queryset = UserModel.objects.all()
 
     def patch(self, *args, **kwargs):
+        admin_status = self.request.query_params.get('admin_status', None)
         user = self.get_object()
 
-        if user.is_staff:
+        if admin_status == 'setadmin':
+            if user.is_staff:
+                raise ValueError('User is already admin')
+            user.is_staff = True
+        elif admin_status == 'resetadmin':
+            if not user.is_staff:
+                raise ValueError('User isn\'t admin')
             user.is_staff = False
 
-            raise ValueError('User is already admin')
-        # else:
-        #     user.is_staff = True
-        user.is_staff = True
         user.save()
         serializer = UserSerializer(user)
         return Response(serializer.data, status.HTTP_200_OK)
@@ -63,3 +65,37 @@ class AddAvatarView(UpdateAPIView):
 
     def get_object(self):
         return self.request.user.profile
+
+
+class UserSetResetActivateView(RetrieveUpdateAPIView):
+    permission_classes = (CanActivateUser,)
+    queryset = UserModel.objects.all()
+
+    def patch(self, *args, **kwargs):
+        active_status = self.request.query_params.get('setstatus', None)
+        user = self.get_object()
+
+        if active_status == 'setactive':
+            if user.is_active:
+                raise ValueError('User is already active')
+            user.is_active = True
+
+        elif active_status == 'resetactive':
+            if not user.is_active:
+                raise ValueError('User is already inactive')
+            user.is_active = False
+
+        user.save()
+        serializer = UserSerializer(user)
+        return Response(serializer.data, status.HTTP_200_OK)
+
+
+class UserListView(ListCreateAPIView):
+    serializer_class = ProfileSerializer
+
+    def get_queryset(self):
+        queryset = ProfileModel.objects.all()
+        user_id = self.request.user.id
+        if user_id:
+            queryset = queryset.exclude(user_id__exact=user_id)
+        return queryset
