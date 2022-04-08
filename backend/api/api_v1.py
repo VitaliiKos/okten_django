@@ -1,0 +1,51 @@
+# from django.urls import include, path
+# from rest_framework.permissions import AllowAny
+# from drf_yasg.views import get_schema_view
+# from drf_yasg import openapi
+#
+# schema_view = get_schema_view(
+#     openapi.Info(
+#         title="Autoparks API",
+#         default_version='v1',
+#         description="My first APIn",
+#         terms_of_service="https://www.google.com/policies/terms/",
+#         contact=openapi.Contact(email="contact@snippets.local"),
+#         license=openapi.License(name="BSD License"),
+#     ),
+#     public=True,
+#     permission_classes=(AllowAny,),
+# )
+# urlpatterns = [
+#     path('/cars', include('app.cars.urls')),
+#     path('/parks', include('app.auto_parks.urls')),
+#     path('/users', include('app.user.urls')),
+#     path('/auth', include('app.auth.urls')),
+#     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+# ]
+
+from django.urls import include, path
+
+from rest_framework.permissions import AllowAny
+
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="Autoparks API",
+        default_version='v1',
+        description="About cars",
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="contact@snippets.local"),
+        license=openapi.License(name="BSD License"),
+    ),
+    public=True,
+    permission_classes=(AllowAny,),
+)
+urlpatterns = [
+    path('/cars', include('app.cars.urls')),
+    path('/auto_parks', include('app.auto_parks.urls')),
+    path('/users', include('app.user.urls')),
+    path('/auth', include('app.auth.urls')),
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+]
