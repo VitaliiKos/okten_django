@@ -19,5 +19,5 @@ class EmailUtils:
 
     @classmethod
     def register_email(cls, address: str, name: str, token: str) -> None:
-        url = f'{os.environ.get("FRONTEND_HOST")}/activate/{token}'
+        url = f'{os.environ.get("FRONTEND_HOST")}/{token}'
         cls._send_email.delay(address, TemplateEnum.REGISTER.value, {'name': name, 'link': url})

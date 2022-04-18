@@ -10,7 +10,7 @@ class CarListCreateView(ListAPIView):
     """
     Get all cars with filters
     """
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    # permission_classes = (IsAuthenticatedOrReadOnly,)
     queryset = CarModel.objects.all()
     serializer_class = CarSerializer
     filterset_class = CarFilter
@@ -25,7 +25,7 @@ class ReadUpdateDeleteView(RetrieveUpdateAPIView):
     patch:
         Partial update car by id
     """
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    # permission_classes = (IsAuthenticatedOrReadOnly,)
     queryset = CarModel.objects.all()
     serializer_class = CarSerializer
 
@@ -34,7 +34,7 @@ class CarGetById(RetrieveAPIView):
     """
     Get car by ID
     """
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    # permission_classes = (IsAuthenticatedOrReadOnly,)
     queryset = CarModel.objects.all()
     serializer_class = CarSerializer
 

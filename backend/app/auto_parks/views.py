@@ -27,6 +27,6 @@ class AutoParkGetById(RetrieveAPIView):
 
 
 class AutoParkDelete(DestroyAPIView):
-    permission_classes = (CanActivateUser,)
+    # permission_classes = (CanActivateUser,)
     serializer_class = AutoParkSerializer
     queryset = AutoParkModel.objects.all()

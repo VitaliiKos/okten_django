@@ -1,0 +1,9 @@
+.parkCard{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid red;
+    background: #a6e1ec;
+    margin: 5px;
+    padding: 5px;
+
+}

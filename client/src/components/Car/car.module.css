@@ -1,0 +1,20 @@
+.car_item{
+    background: #86cfe4;
+    margin: 5px;
+    padding: 5px 10px;
+    border: 2px solid orangered;
+    font-size: 14px;
+    /*width: 22%;*/
+
+}
+.car_button{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+.car_button button{
+    background: #5cb85c;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
