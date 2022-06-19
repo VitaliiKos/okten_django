@@ -1,16 +1,13 @@
-import {AutoParks, Cars, UserRegForm, Users} from "./components";
 import {Navigate, Route, Routes} from "react-router-dom";
 
-import css from './App.module.css';
-import {Layout} from "./components";
+import {AutoParks, Cars, Layout, ParkInfo, UserRegForm, Users} from "./components";
 import {ActivePage, LoginPage, MainPage, UserPage} from "./pages";
+import css from './App.module.css';
 
 function App() {
 
   return (
     <div>
-        {/*<AutoParks/>*/}
-        {/*<Cars/>*/}
          <div className={css.App}>
                 <Routes>
                     <Route path={'/'} element={<Layout/>}>
@@ -21,7 +18,9 @@ function App() {
                             <Route path={':token'} element={<ActivePage/>}/>
                             <Route path={'auth_user'} element={<UserPage/>}/>
                             <Route path={'cars'} element={<Cars/>}/>
-                            <Route path={'parks'} element={<AutoParks/>}/>
+                            <Route path={'parks'} element={<AutoParks/>}>
+                                <Route path={'info'} element={<ParkInfo/>}/>
+                            </Route>
                             <Route path={'users'} element={<Users/>}/>
                             <Route path={''} element={<Users/>}/>
                         </Route>

@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
 import {NavLink, useParams} from "react-router-dom";
-import {userActivate} from "../../store";
 import {useDispatch} from "react-redux";
+
+import {userActivate} from "../../store";
 
 const ActivePage = () => {
     const params = useParams();
@@ -10,16 +11,15 @@ const ActivePage = () => {
 
 
     useEffect(() => {
-         dispatch(userActivate(params.token))
+        dispatch(userActivate(params.token))
         console.log(JSON.stringify(params.token))
     }, [dispatch, params])
-
 
 
     return (
         <div>
             <h2>Ваш аккаунт успішно активований</h2>
-                <NavLink to="/login">log in your account</NavLink>
+            <NavLink to="/login">log in your account</NavLink>
         </div>
     );
 };

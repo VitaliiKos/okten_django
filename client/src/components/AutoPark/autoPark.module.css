@@ -1,9 +1,39 @@
 .parkCard{
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid red;
-    background: #a6e1ec;
+    flex-direction: column;
+    border: 3px solid #958989;
     margin: 5px;
     padding: 5px;
+    border-radius: 25px;
+    width: 70%;
 
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e6f0a3+0,d2e638+50,c3d825+51,dbf043+100;Green+Gloss+%232 */
+    background: #e6f0a3; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #e6f0a3 0%, #d2e638 50%, #c3d825 51%, #dbf043 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #e6f0a3 0%,#d2e638 50%,#c3d825 51%,#dbf043 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #e6f0a3 0%,#d2e638 50%,#c3d825 51%,#dbf043 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0a3', endColorstr='#dbf043',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.parkCard h3{
+    margin: 5px;
+}
+
+.park_button{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.park_button div button{
+    padding: 5px 10px;
+    border-radius: 15px;
+
+    background: #f85032; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f85032 0%, #f16f5c 29%, #f6290c 63%, #f6290c 68%, #f6290c 68%, #f6290c 68%, #f02f17 71%, #e73827 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #f85032 0%,#f16f5c 29%,#f6290c 63%,#f6290c 68%,#f6290c 68%,#f6290c 68%,#f02f17 71%,#e73827 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #f85032 0%,#f16f5c 29%,#f6290c 63%,#f6290c 68%,#f6290c 68%,#f6290c 68%,#f02f17 71%,#e73827 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827',GradientType=0 ); /* IE6-9 */
 }

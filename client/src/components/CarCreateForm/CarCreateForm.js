@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {addCarToPark, updateCarById} from "../../store";
 
 const CarCreateForm = () => {
+
     const {parkIdToAddCar, carForUpdate} = useSelector(state => state['carReducer']);
     const dispatch = useDispatch();
     const {handleSubmit, reset, setValue, register} = useForm();
@@ -27,7 +28,7 @@ const CarCreateForm = () => {
         }
     }, [carForUpdate, setValue])
     return (
-        // <div className={css.form}>
+
         <div>
             <form onSubmit={handleSubmit(submit)}>
 

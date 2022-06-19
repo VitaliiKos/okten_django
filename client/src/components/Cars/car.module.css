@@ -1,6 +1,45 @@
 .cars_list{
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#d8e0de+0,aebfbc+22,99afab+33,8ea6a2+50,829d98+57,4e5c5a+76,4e5c5a+83,d8e0de+94,d8e0de+94,0e0e0e+100 */
+    background: #d8e0de; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #d8e0de 0%, #aebfbc 22%, #99afab 33%, #8ea6a2 50%, #829d98 57%, #4e5c5a 76%, #4e5c5a 83%, #d8e0de 94%, #d8e0de 94%, #0e0e0e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #d8e0de 0%,#aebfbc 22%,#99afab 33%,#8ea6a2 50%,#829d98 57%,#4e5c5a 76%,#4e5c5a 83%,#d8e0de 94%,#d8e0de 94%,#0e0e0e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #d8e0de 0%,#aebfbc 22%,#99afab 33%,#8ea6a2 50%,#829d98 57%,#4e5c5a 76%,#4e5c5a 83%,#d8e0de 94%,#d8e0de 94%,#0e0e0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e0de', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    border: 2px solid #6495ed;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #2e5cbe;
+    width: 70%;
+    margin: auto;
+    align-items: center
+}
+.carCard{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 5px;
+    justify-content: center;
+}
+
+.cars_listInfo{
+    margin-bottom: 5px;
+    width: 99.4%;
+    border: 2px solid yellowgreen;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cedbe9+0,aac5de+17,6199c7+37,3a84c3+51,419ad6+59,4bb8f0+71,3a8bc2+84,26558b+100 */
+    background: #cedbe9; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #cedbe9 0%, #aac5de 17%, #6199c7 37%, #3a84c3 51%, #419ad6 59%, #4bb8f0 71%, #3a8bc2 84%, #26558b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #cedbe9 0%,#aac5de 17%,#6199c7 37%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #cedbe9 0%,#aac5de 17%,#6199c7 37%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', endColorstr='#26558b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.cars_list button{
+    border-radius: 15px;
+    padding: 5px 15px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cedbe9+0,aac5de+17,3a84c3+51,419ad6+59,4bb8f0+71,3a8bc2+84,26558b+100 */
+    background: #cedbe9; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #cedbe9 0%, #aac5de 17%, #3a84c3 51%, #419ad6 59%, #4bb8f0 71%, #3a8bc2 84%, #26558b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #cedbe9 0%,#aac5de 17%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #cedbe9 0%,#aac5de 17%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', endColorstr='#26558b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }

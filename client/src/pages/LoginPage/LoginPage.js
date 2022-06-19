@@ -13,23 +13,20 @@ const LoginPage = () => {
         dispatch(userAuth({data}))
         reset()
     }
-    useEffect(() => {}, [setValue, token, error])
-
+    useEffect(() => {
+    }, [setValue, token, error])
     return (
-        // <div className={css.form}>
         <div>
-            {/*<div className={css.form_title}><h2>Register Form</h2></div>*/}
             <div><h2>Login Form</h2></div>
             {token ?
-               <NavLink to="/auth_user">Go to your page</NavLink> :
+                <NavLink to="/auth_user">Go to your page</NavLink> :
                 <form onSubmit={handleSubmit(submit)}>
-                    {/*<div className={css.blockInput}>*/}
                     <div>
                         <label>Email: <input type="email" {...register('email')}/></label>
                         <label>Password: <input type="password" {...register('password')}/></label>
                     </div>
 
-                       <button> Log in </button>
+                    <button> Log in</button>
                 </form>
             }
         </div>

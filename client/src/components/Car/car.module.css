@@ -1,20 +1,29 @@
 .car_item{
-    background: #86cfe4;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
+    background: #9dd53a; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     margin: 5px;
-    padding: 5px 10px;
-    border: 2px solid orangered;
+    padding: 10px 15px;
+    border: 2px solid #1d8eeb;
     font-size: 14px;
-    /*width: 22%;*/
+    width: 27%;
+
+    border-radius: 25px;
 
 }
 .car_button{
     display: flex;
     flex-wrap: wrap;
     margin: 5px;
+    justify-content: center;
 }
 .car_button button{
     background: #5cb85c;
     margin: 5px;
     padding: 5px 10px;
     border-radius: 15px;
+    border-color: floralwhite azure;
 }

@@ -6,6 +6,7 @@ import {userCreate} from "../../store";
 import css from './useregform.module.css';
 
 const UserRegForm = () => {
+
     const dispatch = useDispatch();
     const {handleSubmit, reset, register} = useForm();
 

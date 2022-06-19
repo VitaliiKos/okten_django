@@ -9,3 +9,6 @@ export * from './UserRegForm/UserRegForm';
 export * from './CarCreateForm/CarCreateForm';
 export * from './Users/Users';
 export * from './User/User';
+export * from './ParkInfo/ParkInfo';
+export * from './ParkCreateForm/ParkCreateForm';
+export * from './AvatarCreateForm/AvatarCreateForm'
