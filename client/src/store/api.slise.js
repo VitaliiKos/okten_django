@@ -144,7 +144,6 @@ export const parkCreate = createAsyncThunk(
 export const avatarCreate = createAsyncThunk(
     'apiConstructor/avatarCreate',
     async (data, {dispatch}) => {
-        console.log(data)
         try {
             const newAva = await usersService.addAvatar(data)
             dispatch(addAva({data: newAva}))
@@ -160,14 +159,12 @@ const carSlice = createSlice({
     initialState,
     reducers: {
         addUser: (state, action) => {
-            console.log(action)
             state.users.push(action.payload.data)
         },
         chooseTheme: (state) => {
             state.themeStatus = !state.themeStatus
         },
         parkId: (state, action) => {
-            console.log(action)
             state.parkIdToAddCar = action.payload.id
         },
         deleteCar: (state, action) => {
@@ -200,14 +197,12 @@ const carSlice = createSlice({
             state.error = null
         },
         [getAllCars.fulfilled]: (state, action) => {
-            console.log(action)
             state.cars_list_page = action.meta.arg
             state.cars_payload = action.payload
             state.cars = action.payload.data
 
         },
         [getAllCars.rejected]: (state, action) => {
-            console.log(action.payload)
             state.status = 'rejected'
             state.error = action.payload
 
@@ -226,7 +221,6 @@ const carSlice = createSlice({
         [getAllParks.rejected]: (state, action) => {
             state.status = 'rejected'
             state.error = action.payload
-            console.log(action.payload)
 
         },
         // **********************************************
@@ -242,7 +236,6 @@ const carSlice = createSlice({
         [userAuth.rejected]: (state, action) => {
             state.status = 'rejected'
             state.error = action.payload
-            console.log(action.payload)
         },
         // **********************************************
         [addCarToPark.pending]: (state) => {
@@ -250,14 +243,12 @@ const carSlice = createSlice({
             state.error = null
         },
         [addCarToPark.fulfilled]: (state, action) => {
-            console.log('182', action)
             state.cars.push(action.payload)
             state.parkIdToAddCar = null
         },
         [addCarToPark.rejected]: (state, action) => {
             state.status = 'rejected'
             state.error = action.payload
-            console.log(action.payload)
         },
         // **********************************************
         [getOtherUsers.pending]: (state) => {
@@ -272,7 +263,6 @@ const carSlice = createSlice({
         [getOtherUsers.rejected]: (state, action) => {
             state.status = 'rejected'
             state.error = action.payload
-            console.log(action.payload)
         },
         // **********************************************
 
